@@ -10,10 +10,28 @@
 	</head>
 	<body>
 		<a href="file:///C:/Users/Jared/Desktop/JavaScriptFall2017/project_presenter_app/client/index.html">Popup</a>
+		<button id="rpg">RPG Console.log</button>
+		<script type="text/javascript">
+			$('#rpg').click(function(){
+			var health = 100;
+       		var health2 = 100;
+       		var min = 1;
+       		var max = 11;
+       		var atk = Math.floor(Math.random()*(max-min)+min);
+       		var atk2 = Math.floor(Math.random()*(max-min)+min);
+       		
+
+
+       		console.log("your power is ", atk," and enemy power is ", atk2,". ");
+       		console.log("you atk enemy for ",atk," dmg.")
+       		
+       		return
+       		});
+		</script>
 		<script type="text/javascript">
 			$('a').click(function(){
 			console.log(this);
-       		window.open(this,'_blank','width=800, height=900');
+       		window.open(this,'_blank','width=auto, height=auto');
        		return false;
 			});
 		</script>
