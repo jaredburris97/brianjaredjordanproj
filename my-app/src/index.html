@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Presentee</title>
+		<base href="/">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+	  <!-- <app-root></app-root> -->
+
+	  <a href="file:///C:/Users/Jared/Desktop/JavaScriptFall2017/project_presenter_app/client/index.html">Popup</a>			
+			<script type="text/javascript">
+				$('a').click(function(){
+				console.log(this);
+	       		window.open(this,'_blank','width=auto, height=auto');
+	       		return false;
+				});
+			</script>
+
+			<div class="col-md-12" style="background-color: lightblue;">
+				<h1>Project Presenter - Eleven Fifty Academy</h1>
+				<input type="text" width="auto"><button>Go</button>
+				<hr/>
+				<a href="#frame"></a>
+				<iframe src="file:///C:/Users/Jared/Desktop/JavaScriptFall2017/project_presenter_app/client/index.html" width="100%" height="500px"></iframe>
+			</div>
+			
+			<footer position="absolute">
+			<div class="col-md-6" style="background-color: lightgray;">
+				<h2>Live Chat</h2>
+					<hr/>
+				<input type="text" width="auto"><button>Send</button>
+					<hr/>
+				<p>Jordan: Overall, I like the project. Nice work guys!</p>
+				<p>Jared: I think some features need work. The posts should be editable once posted.</p>
+				<p>Brian: This project is trash, you should just throw it away.</p>
+				<p>Jordan: Hey man, that is not constructive feedback, I am flagging your comment to be removed.</p>
+				<p>Jared: I agree with Jordan. This kind of feedback does not help the project presenters in any way. You should really try to provide some more helpful advice.</p>
+				<p>Brian: Oh I didn't realize how harsh I was being. I'm sorry. I will remove my message.</p>
+				<p>Brian: I think I meant to say I was not that impressed with this project, and it needs more work.</p>
+				<p>Jordan: That is some positive feedback, Brian.</p>
+			</div>
+
+			<div class="col-md-6" style="background-color: lightgray;">
+				<h2>Feedback List</h4>
+					<hr/>
+				<input type="text" width="auto"><button>Send</button>
+					<hr/>
+				<ul>
+					<li>Starred chat messages (by presenter/admins(kenn, paul)) get added here</li>
+					<li>This list can be compiled and downloaded as TXT, or just copied to clipboard</li>
+				</ul>
+			</div>
+			</footer>
+	</body>
+</html>
