@@ -1,0 +1,21 @@
+{
+  "name": "brianjaredjordanproj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredburris97/brianjaredjordanproj.git"
+  },
+  "author": "brianjaredjordan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaredburris97/brianjaredjordanproj/issues"
+  },
+  "homepage": "https://github.com/jaredburris97/brianjaredjordanproj#readme"
+}
