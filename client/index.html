@@ -13,17 +13,22 @@
 		<button id="rpg">RPG Console.log</button>
 		<script type="text/javascript">
 			$('#rpg').click(function(){
+				
 			var health = 100;
        		var health2 = 100;
        		var min = 1;
        		var max = 11;
        		var atk = Math.floor(Math.random()*(max-min)+min);
        		var atk2 = Math.floor(Math.random()*(max-min)+min);
-       		
-
-
-       		console.log("your power is ", atk," and enemy power is ", atk2,". ");
-       		console.log("you atk enemy for ",atk," dmg.")
+			console.log("your power is ", atk," and enemy power is ", atk2,". ");
+       		var def = Math.floor(Math.random()*((max-4)-min)+min);
+       		var def2 = Math.floor(Math.random()*((max-4)-min)+min);
+       		console.log("your armor is ", def," and enemy armor is ", def2,". ");
+       		atk = atk-def2;
+       		atk2 = atk2-def;
+       		health = health-atk2;
+       		health2 = health2-atk;
+       		console.log("you atk enemy for ",atk," dmg. You are atkd for ",atk2," dmg. You have ",health," health remaining. Enemy has ",health2," health remaining.");
        		
        		return
        		});
