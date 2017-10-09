@@ -12,6 +12,7 @@
 		<a href="file:///C:/Users/Jared/Desktop/JavaScriptFall2017/project_presenter_app/client/index.html">Popup</a>
 		<script type="text/javascript">
 			$('a').click(function(){
+			console.log(this);
        		window.open(this,'_blank','width=800, height=900'); 
   			return false;
 			});
@@ -21,7 +22,8 @@
 			<h1>Project Presenter - Eleven Fifty Academy</h1>
 			<input type="text" width="auto"><button>Go</button>
 			<hr/>
-			<iframe src="file:///C:/Users/Jared/Desktop/JavaScriptFall2017/project_presenter_app/client/index.html" width="100%" height="1000px"></iframe>
+			<a href="#frame"></a>
+			<iframe src="file:///C:/Users/Jared/Desktop/JavaScriptFall2017/project_presenter_app/client/index.html" width="100%" height="500px"></iframe>
 		</div>
 		
 		<footer position="absolute">
