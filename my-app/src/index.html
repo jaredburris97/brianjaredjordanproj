@@ -13,26 +13,43 @@
 	</head>
 
 	<body>
-	  <!-- <app-root></app-root> -->
+		<app-root></app-root>
 
+		<a href="http://localhost:4200/">Popup</a>
+
+<<<<<<< HEAD
 	  <a href="http://localhost:4200/">Popup</a>			
+=======
+>>>>>>> 402f048f51899c806058532fd748284e788002b9
 			<script type="text/javascript">
-				$('a').click(function(){
-				console.log(this);
-	       		window.open(this,'_blank','width=auto, height=auto');
-	       		return false;
+				$(document).ready(function(){
+					$('#sendLink').click(function(){
+						var iframe = $('#iframeLink');
+						var link1 = $('#link');
+						iframe.attr('src', link1);
+					});
+
+
+					$('a').click(function(){
+					console.log(this);
+		       		window.open(this,'_blank','width=auto, height=auto');
+		       		return false;
+					});
 				});
 			</script>
 
 			<div class="col-md-12" style="background-color: lightblue;">
 				<h1>Project Presenter - Eleven Fifty Academy</h1>
-				<input type="text" width="auto"><button>Go</button>
+				<input id="link" type="text" width="auto"><button id="sendLink">Go</button>
 				<hr/>
 				<a href="#frame"></a>
+<<<<<<< HEAD
 				<iframe src="https://www.youtube.com/" width="100%" height="500px"></iframe>
+=======
+				<iframe id="iframeLink" src="http://localhost:4200/" width="100%" height="500px"></iframe>
+>>>>>>> 402f048f51899c806058532fd748284e788002b9
 			</div>
 			
-			<footer position="absolute">
 			<div class="col-md-6" style="background-color: lightgray;">
 				<h2>Live Chat</h2>
 					<hr/>
@@ -58,6 +75,6 @@
 					<li>This list can be compiled and downloaded as TXT, or just copied to clipboard</li>
 				</ul>
 			</div>
-			</footer>
+		<footer>&copy; 2017 Team Link Studios LLC</footer>
 	</body>
 </html>
