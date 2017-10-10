@@ -21,7 +21,7 @@ import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
 
 import { appRoutes } from '../routes';
-import { environment } from '../environments/environtment';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { environment } from '../environments/environtment';
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase);
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [AuthService, ChatService],
   bootstrap: [AppComponent]
