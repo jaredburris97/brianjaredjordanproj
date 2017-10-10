@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 	</head>
 
 	<body>
@@ -19,12 +20,11 @@
 
 			<script type="text/javascript">
 				$(document).ready(function(){
-					$('#sendLink').click(function(){
-						var iframe = $('#iframeLink');
-						var link1 = $('#link');
-						iframe.attr('src', link1);
-					});
+					$('#sendLinkBtn').click(function(){
 
+						var link1 = $('#link').val();
+						$('#iframeLink').attr('src', link1);
+					});
 
 					$('a').click(function(){
 					console.log(this);
@@ -36,16 +36,16 @@
 
 			<div class="col-md-12" style="background-color: lightblue;">
 				<h1>Project Presenter - Eleven Fifty Academy</h1>
-				<input id="link" type="text" width="auto"><button id="sendLink">Go</button>
+				<input id="link" type="text" width="auto" placeholder="Paste project link here"><button id="sendLinkBtn">Go</button>
 				<hr/>
 				<a href="#frame"></a>
-				<iframe id="iframeLink" src="http://localhost:4200/" width="100%" height="500px"></iframe>
+				<iframe id="iframeLink" src="" X-Options="false" width="100%" height="500px"></iframe>
 			</div>
 			
 			<div class="col-md-6" style="background-color: lightgray;">
 				<h2>Live Chat</h2>
 					<hr/>
-				<input type="text" width="auto"><button>Send</button>
+				<input type="text" width="auto" placeholder="Constructive message"><button>Send</button>
 					<hr/>
 				<p>Jordan: Overall, I like the project. Nice work guys!</p>
 				<p>Jared: I think some features need work. The posts should be editable once posted.</p>
@@ -60,7 +60,7 @@
 			<div class="col-md-6" style="background-color: lightgray;">
 				<h2>Feedback List</h4>
 					<hr/>
-				<input type="text" width="auto"><button>Send</button>
+				<input type="text" width="auto" placeholder="Constructive feedback"><button>Send</button>
 					<hr/>
 				<ul>
 					<li>Starred chat messages (by presenter/admins(kenn, paul)) get added here</li>
