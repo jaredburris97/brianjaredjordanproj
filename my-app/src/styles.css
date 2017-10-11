@@ -1,9 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-h1 {
-	text-align: center;
-	align-content: center;
+* {
+	height: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
-/*body {
-	background-color: black;
-}*/
+body {
+	width: 100%;
+	min-height: 100%;
+	background: #eee;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: "Open Sans", sans-serif;
+}
+
