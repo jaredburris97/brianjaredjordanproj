@@ -34,7 +34,7 @@ import { environment } from '../environments/environment';
     SignupFormComponent,
     NavbarComponent,
     UserListComponent,
-    UserItemComponent
+    UserItemComponent,
   ],
   imports: [
     BrowserModule,
