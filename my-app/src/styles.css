@@ -6,6 +6,7 @@
     border: 0;
 }
 
+<<<<<<< HEAD
 body {
     width: 100%;
     min-height:100%;
@@ -35,3 +36,55 @@ app-chat-form{
 	display: block;
 	height: auto;
 }
+=======
+/*body {
+	background-color: black;
+}*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.navbar {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+/*body > .container {
+	padding: 60px 15px 0;
+}
+
+.footer > .container {
+	position: absolute;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+code {
+	font-size: 80%;
+}*/
+>>>>>>> 8fa7aedda17330fdceb6d9a7589edb0e70d4e28a
