@@ -23,6 +23,8 @@ import { AuthService } from './services/auth.service';
 
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
+import { IframecreatorComponent } from './iframecreator/iframecreator.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { environment } from '../environments/environment';
     MessageComponent,
     NavbarComponent,
     UserListComponent,
-    UserItemComponent
+    UserItemComponent,
+    IframecreatorComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,
