@@ -15,11 +15,11 @@ export class FeedComponent implements OnInit, OnChanges {
   constructor(private chat: ChatService) { }
 
   ngOnInit() {
-    // this.feed = this.chat.getMessages();
+    this.feed = this.chat.messagesDB;
   }
 
   ngOnChanges() {
-    // this.feed = this.chat.getMessages();
+    this.feed = this.chat.messagesDB;
   }
 
 }

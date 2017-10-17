@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from '../services/auth.service';
-import { Subscription } from 'rxjs/subscription';
 
 import { ChatMessage } from '../models/chat-message.model';
 
@@ -22,7 +21,7 @@ export class ChatService {
   			this.user = auth;
   		}
   	})
-  	this.messagesDB = this.db.list("messages")
+  	this.messagesDB = this.db.list("messages").valueChanges()
   }
 
 //   constructor(
@@ -40,21 +39,21 @@ export class ChatService {
 //      });
 // }
 
- // getUser() {
- //   const userId = this.user.uid;
- //   const path = `/users/${userId}`;
- //   return this.db.object(path);
- // }
+ getUser() {
+   const userId = this.user.uid;
+   const path = `/users/${userId}`;
+   return this.db.object(path);
+ }
 
- // getUsers() {
- //   const path = '/users';
- //   return this.db.list(path);
- // }
+ getUsers() {
+   const path = '/users';
+   return this.db.list(path);
+ }
 
   sendMessage(msg: string) {
     const timestamp = this.getTimeStamp();
-    //const email = this.user.email;
-    const email = 'this.user.email;'
+    const email = this.user.email;
+    // const email = 'this.user.email;'
     // this.chatMessages = this.getMessages();
     // this.chatMessages.push();
     const messageObject = {
