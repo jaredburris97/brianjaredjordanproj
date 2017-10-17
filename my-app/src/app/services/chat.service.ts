@@ -1,67 +1,81 @@
+import * as firebase from 'firebase/app';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from '../services/auth.service';
-import * as firebase from 'firebase/app';
+import { Subscription } from 'rxjs/subscription';
 
 import { ChatMessage } from '../models/chat-message.model';
 
 @Injectable()
 export class ChatService {
   user: firebase.User;
-  chatMessages: FirebaseListObservable<ChatMessage[]>;
+  chatMessages: Observable<ChatMessage[]>;
+  messagesDB: any;
   chatMessage: ChatMessage;
   userName: Observable<string>;
 
-  constructor(
-    private db: AngularFireDatabase,
-    private afAuth: AngularFireAuth
-    ) {
-     this.afAuth.authState.subscribe(auth => {
-       if (auth !== undefined && auth !== null) {
-         this.user = auth;
-       }
+  constructor( private db: AngularFireDatabase, private afAuth: AngularFireAuth){
+  	this.afAuth.authState.subscribe(auth => {
+  		if ( auth !== undefined && auth !== null) {
+  			this.user = auth;
+  		}
+  	})
+  	this.messagesDB = this.db.list("messages")
+  }
 
-       this.getUser().subscribe(a => {
-         this.userName = a.displayName;
-       });
-     });
-}
+//   constructor(
+//     private db: AngularFireDatabase,
+//     private afAuth: AngularFireAuth
+//     ) {
+//      this.afAuth.authState.subscribe(auth => {
+//        if (auth !== undefined && auth !== null) {
+//          this.user = auth;
+//        }
 
- getUser() {
-   const userId = this.user.uid;
-   const path = `/users/${userId}`;
-   return this.db.object(path);
- }
+//        this.getUser().subscribe(a => {
+//          this.userName = a.displayName;
+//        });
+//      });
+// }
 
- getUsers() {
-   const path = '/users';
-   return this.db.list(path);
- }
+ // getUser() {
+ //   const userId = this.user.uid;
+ //   const path = `/users/${userId}`;
+ //   return this.db.object(path);
+ // }
+
+ // getUsers() {
+ //   const path = '/users';
+ //   return this.db.list(path);
+ // }
 
   sendMessage(msg: string) {
     const timestamp = this.getTimeStamp();
-    const email = this.user.email;
-    this.chatMessages = this.getMessages();
-    this.chatMessages.push({
+    //const email = this.user.email;
+    const email = 'this.user.email;'
+    // this.chatMessages = this.getMessages();
+    // this.chatMessages.push();
+    const messageObject = {
       message: msg,
       timeSent: timestamp,
-      userName: this.userName,
-      email: email });
+      email: email }
+
+    this.messagesDB.set("message", messageObject)
 
     console.log("called sendmessage")
   }
 
-  getMessages(): FirebaseListObservable<ChatMessage[]> {
-    // query to create our message feed binding
-    return this.db.list('messages', {
-      query: {
-        limitToLast: 25,
-        orderByKey: true
-      }
-    });
-  }
+  // getMessages(): Observable<ChatMessage[]> {
+  //   // query to create our message feed binding
+  //   return this.db.list('messages', {
+  //     query: {
+  //       limitToLast: 25,
+  //       orderByKey: true
+  //     }
+  //   });
+  // }
 
   getTimeStamp() {
     const now = new Date();
