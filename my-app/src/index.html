@@ -2,19 +2,26 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+
 		<title>Presentee</title>
+
 		<base href="/">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 		<script	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     	
     	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	</head>
 
 	<body>
+		<div class="wrapper">
 		<div class="navbar navbar-default" role="navigation">
 			<div class="container">
     			<div class="navbar-header">
@@ -30,37 +37,40 @@
 	    		<ul class="nav navbar-nav">
 	        		<li class="active"><a href="#">Home</a></li>
 	        		<li class="dropdown">
-		        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Quick Links<b class="caret"></b></a>
 			        	<ul class="dropdown-menu">
-				            <li><a href="#">Action</a></li>
-				            <li><a href="#">Another action</a></li>
-				            <li><a href="#">Something else here</a></li>
+				            <li><a href="#">Login</a></li>
+				            <li><a href="#">Signup</a></li>
+				            <li><a href="#">Signout</a></li>
 				            <li class="divider"></li>
-				            <li class="dropdown-header">Nav header</li>
-				            <li><a href="#">Separated link</a></li>
-				            <li><a href="#">One more separated link</a></li>
+				            <li class="dropdown-header">Features</li>
+				            <li><a href="#">Live Chat</a></li>
+				            <li><a href="#">Feedback</a></li>
 			        	</ul>
 	    			</li>
 	    		</ul>
 	    			<ul class="nav navbar-nav navbar-right">
-	    				<li><a href="http://localhost:4200">Popup</a></li>
+	    				<li id="popup"><a href="http://localhost:4200">Popup</a></li>
 	    			</ul>
 	    		</div><!--/.nav-collapse -->
   			</div>
 		</div>
 
-		<app-root></app-root>
+		
 
 		<hr/>
-
+		
+		<!--
+		CODE THAT CHANGES IFRAME LINK
+		-->
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('#sendLinkBtn').click(function(){
 					var link1 = $('#link').val();
 					$('#iframeLink').attr('src', link1);
 				});
-				$('a').click(function(){
-				console.log(this);
+				$('#popup').click(function(){
+				// console.log(this);
 		   		window.open(this,'_blank','width=auto, height=auto');
 	       		return false;
 				});
@@ -76,6 +86,12 @@
 				<a href="#frame"></a>
 				<iframe id="iframeLink" src="" X-Options="false" width="100%" height="500px"></iframe>
 			</div>
+
+
+			
+			<app-root></app-root>
+
+
 			
 			<div class="col-md-6" style="background-color: lightgray;">
 				<h2>Live Chat</h2>
@@ -102,7 +118,8 @@
 					<li>This list can be compiled and downloaded as TXT, or just copied to clipboard</li>
 				</ul>
 			</div>
-
+		</div>
+		
 		<footer class="footer">
 			<div class="container">
 				<span class="text-muted">&copy; 2017 Team Link Studios LLC.</span>

@@ -16,6 +16,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { AdminportalComponent } from './adminportal/adminportal.component';
 
 import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
@@ -26,12 +27,13 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
+    SignupFormComponent,
+    LoginFormComponent,
+    AdminportalComponent,
     ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
     MessageComponent,
-    LoginFormComponent,
-    SignupFormComponent,
     NavbarComponent,
     UserListComponent,
     UserItemComponent
