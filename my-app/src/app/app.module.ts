@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
@@ -34,18 +34,17 @@ import { environment } from '../environments/environment';
     SignupFormComponent,
     NavbarComponent,
     UserListComponent,
-    UserItemComponent
+    UserItemComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
     AngularFireModule,
-    AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [AuthService, ChatService],
+  providers: [AuthService, ChatService, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
