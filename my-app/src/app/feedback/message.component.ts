@@ -3,8 +3,7 @@ import { Message } from './message.model';
 
 @Component({
   selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  templateUrl: './message.component.html'
 })
 export class MessageComponent {
   @Input() message: Message;

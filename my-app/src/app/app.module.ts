@@ -10,8 +10,10 @@ import { AppComponent } from './app.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
-import { MessageComponent } from './message/message.component';
-import { MessageInputComponent } from './message/message.component';
+import { MessageComponent } from './feedback/message.component';
+import { MessageInputComponent } from './feedback/message-input.component';
+import { MessageListComponent } from './feedback/message-list.component';
+import { MessagesComponent } from './feedback/messages.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -32,6 +34,8 @@ import { environment } from '../environments/environment';
     FeedComponent,
     MessageComponent,
     MessageInputComponent,
+    MessageListComponent,
+    MessagesComponent,
     LoginFormComponent,
     SignupFormComponent,
     NavbarComponent,
