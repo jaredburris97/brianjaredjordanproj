@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
-import { MessageComponent } from './feedback/message.component';
+//import { MessageComponent } from './feedback/message.component';
 import { MessageInputComponent } from './feedback/message-input.component';
 import { MessageListComponent } from './feedback/message-list.component';
 import { MessagesComponent } from './feedback/messages.component';
@@ -32,7 +32,7 @@ import { environment } from '../environments/environment';
     ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
-    MessageComponent,
+    //MessageComponent,
     MessageInputComponent,
     MessageListComponent,
     MessagesComponent,
