@@ -11,6 +11,7 @@ import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
 import { MessageComponent } from './feedback/message.component';
+import { MessageService } from './feedback/message.service';
 import { MessageInputComponent } from './feedback/message-input.component';
 import { MessageListComponent } from './feedback/message-list.component';
 import { MessagesComponent } from './feedback/messages.component';
@@ -50,7 +51,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [AuthService, ChatService, AngularFireDatabase],
+  providers: [AuthService, ChatService, AngularFireDatabase, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
