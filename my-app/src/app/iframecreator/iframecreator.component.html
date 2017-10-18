@@ -1,3 +1,29 @@
 <p>
   iframecreator works!
 </p>
+		
+<!--
+CODE THAT CHANGES IFRAME LINK
+-->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#sendLinkBtn').onclick(function(){
+			var link1 = $('#link').val();
+			$('#iframeLink').innerHTML('src', link1);
+		});
+	});
+</script>
+
+<p>Click on link bellow to change iframe content:</p>
+<a href="http://www.bing.com" target="search_iframe">Bing</a>
+<a href="http://en.wikipedia.org" target="search_iframe">Wikipedia</a>
+
+<div class="col-md-12" style="background-color: lightblue;">
+	<h1>Project Presenter - Eleven Fifty Academy</h1>
+	<hr/>
+	<input id="link" type="text" width="auto" placeholder="Paste project link here"><button id="sendLinkBtn" class="btn btn-primary">Update</button>
+	<hr/>
+	<a href="#frame"></a>
+	<iframe name="iframeLink" src="https://jaredburris97.github.io/" X-Options="false" width="100%" height="500px"></iframe>
+</div>

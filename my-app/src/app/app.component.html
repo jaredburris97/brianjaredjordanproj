@@ -1,11 +1,37 @@
+<router-outlet>Loading router outlet . . .</router-outlet>
+
+<app-navbar>Loading app navbar . . .</app-navbar>
+
 <p>hello from app component html</p>
 
-<navbar (featureSelected)="onNavigate($event)"></navbar>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<div class="col-md-12">
+	<app-adminportal></app-adminportal>
 </div>
+
+<!-- <div class="container">
+  <div class="row"> -->
+    <div class="col-md-12">
+
+    	<!-- <input type="text" width="100%">
+    	<button>AppComponentBtn</button> -->
+		
+
+		<!-- <app-signup-form></app-signup-form> -->
+		
+		<app-iframecreator>Loading iframe . . .</app-iframecreator>
+
+     	<app-login-form></app-login-form>
+
+		<app-chatroom></app-chatroom>
+		<app-feed></app-feed>
+		<app-message></app-message>
+
+     	<!-- <div class="chatRoom">
+		<div class="chatHeaderWrapper">
+		</div>
+		</div> -->
+    </div>
+<!--   </div>
+</div> -->
+
 <app-footer></app-footer>
