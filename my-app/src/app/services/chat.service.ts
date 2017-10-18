@@ -21,7 +21,8 @@ export class ChatService {
   			this.user = auth;
   		}
   	})
-  	this.messagesDB = this.db.list("messages").valueChanges()
+  	this.messagesDB = this.db.list("messages")
+  	this.chatMessages = this.messagesDB.valueChanges()
   }
 
 //   constructor(
@@ -61,20 +62,15 @@ export class ChatService {
       timeSent: timestamp,
       email: email }
 
-    this.messagesDB.set("message", messageObject)
+      console.log("called sendmessage")
 
-    console.log("called sendmessage")
+    this.messagesDB.set("message", messageObject)
   }
 
-  // getMessages(): Observable<ChatMessage[]> {
-  //   // query to create our message feed binding
-  //   return this.db.list('messages', {
-  //     query: {
-  //       limitToLast: 25,
-  //       orderByKey: true
-  //     }
-  //   });
-  // }
+  getMessages() {
+    // query to create our message feed bindings
+    return this.chatMessages
+	}
 
   getTimeStamp() {
     const now = new Date();
