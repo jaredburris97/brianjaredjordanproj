@@ -10,6 +10,8 @@ export class FeedbackComponent {
   @Input() feedback: Feedback;
   @Output() editClicked = new EventEmitter<string>();
 
+  constructor(private feedbackService: FeedbackService) {}
+
    onEdit(){
   	this.editClicked.emit('A new value');
   }
