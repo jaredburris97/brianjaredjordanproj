@@ -62,11 +62,11 @@ export class ChatService {
       timeSent: timestamp,
       email: email }
 
-      console.log("called sendmessage")
+      console.log("called sendmessage");
 
       let messages = firebase.database().ref().child("messages").push().key
 
-      let newMessage = firebase.database().ref("messages/" + messages).set(messageObject)
+      let newMessage = firebase.database().ref("messages/" + messages).set(messageObject);
   }
 
   getMessages() {
