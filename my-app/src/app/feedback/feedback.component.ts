@@ -1,12 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Message } from './message.model';
+import { Feedback } from './feedback.model';
 
 @Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html'
+  selector: 'app-feedback',
+  templateUrl: './feedback.component.html'
 })
-export class MessageComponent {
-  @Input() message: Message;
+export class FeedbackComponent {
+  @Input() feedback: Feedback;
   @Output() editClicked = new EventEmitter<string>();
 
   onEdit(){
