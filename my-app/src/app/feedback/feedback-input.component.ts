@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
-import { FeedbackService } from "./services/feedback.service";
+import { FeedbackService } from "../services/feedback.service";
 import { Feedback } from "./feedback.model";
 
 @Component({

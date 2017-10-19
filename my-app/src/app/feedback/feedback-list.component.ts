@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Feedback } from "./feedback.model";
-import { FeedbackService } from "./services/feedback.service";
+import { FeedbackService } from "../services/feedback.service";
 
 @Component({
 	selector: 'app-feedback-list',
