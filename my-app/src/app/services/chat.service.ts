@@ -64,7 +64,10 @@ export class ChatService {
 
       console.log("called sendmessage")
 
-    this.messagesDB.set("message", messageObject)
+      let messages = firebase.database().ref().child("messages").push().key
+
+      let newMessage = firebase.database().ref("messages/" + messages).set(messageObject)
+
   }
 
   getMessages() {
