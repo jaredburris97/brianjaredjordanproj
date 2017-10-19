@@ -11,7 +11,7 @@ import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import { FeedbackService } from './feedback/feedback.service';
+import { FeedbackService } from './services/feedback.service';
 import { FeedbackInputComponent } from './feedback/feedback-input.component';
 import { FeedbackListComponent } from './feedback/feedback-list.component';
 import { FeedbacksComponent } from './feedback/feedbacks.component';
