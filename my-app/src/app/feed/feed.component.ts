@@ -10,16 +10,16 @@ import { ChatMessage } from '../models/chat-message.model';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit, OnChanges {
-  feed: Observable<ChatMessage[]>;
+  feed
 
   constructor(private chat: ChatService) { }
 
   ngOnInit() {
-    // this.feed = this.chat.getMessages();
+    this.feed = this.chat.getMessages();
   }
 
   ngOnChanges() {
-    // this.feed = this.chat.getMessages();
+    this.feed = this.chat.getMessages();
   }
 
 }
