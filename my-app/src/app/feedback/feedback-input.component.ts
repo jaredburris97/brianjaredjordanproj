@@ -6,7 +6,8 @@ import { Feedback } from "./feedback.model";
 
 @Component({
 	selector: 'app-feedback-input',
-	templateUrl: './feedback-input.component.html'
+	templateUrl: './feedback-input.component.html',
+	styleUrls: ['./feedback-input.component.css']
 })
 export class FeedbackInputComponent{
 	constructor(private feedbackService: FeedbackService) {}
