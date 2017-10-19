@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Feedback } from './feedback.model';
 import { FeedbackService } from '../services/feedback.service';
 
@@ -8,12 +8,12 @@ import { FeedbackService } from '../services/feedback.service';
 })
 export class FeedbackComponent {
   @Input() feedback: Feedback;
-  @Output() editClicked = new EventEmitter<string>();
+  //@Output() editClicked = new EventEmitter<string>();
 
   constructor(private feedbackService: FeedbackService) {}
 
    onEdit(){
-  	this.editClicked.emit('A new value');
+  	this.fee
   }
 
   onDelete(){
