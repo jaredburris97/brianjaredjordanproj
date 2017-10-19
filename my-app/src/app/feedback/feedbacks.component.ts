@@ -8,9 +8,9 @@ import { Component } from "@angular/core";
 			</div>
 			<hr>
 			<div class="row">
-					<app-message-list></app-message-list>
+					<app-feedback-list></app-feedback-list>
 			</div>
 	`
 })
-export class MessagesComponent{
+export class FeedbacksComponent{
 }
