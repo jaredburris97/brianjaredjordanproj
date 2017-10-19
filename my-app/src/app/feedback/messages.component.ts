@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 
 @Component({
-	selector: 'app-messages',
+	selector: 'app-feedbacks',
 	template: `
 			<div class="row">
-					<app-message-input></app-message-input>
+					<app-feedback-input></app-feedback-input>
 			</div>
 			<hr>
 			<div class="row">
