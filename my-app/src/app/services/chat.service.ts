@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from '../services/auth.service';
-import { Subscription } from 'rxjs/subscription';
 
 import { ChatMessage } from '../models/chat-message.model';
 
@@ -23,6 +22,7 @@ export class ChatService {
   		}
   	})
   	this.messagesDB = this.db.list("messages")
+  	this.chatMessages = this.messagesDB.valueChanges()
   }
 
 //   constructor(
@@ -40,21 +40,21 @@ export class ChatService {
 //      });
 // }
 
- // getUser() {
- //   const userId = this.user.uid;
- //   const path = `/users/${userId}`;
- //   return this.db.object(path);
- // }
+ getUser() {
+   const userId = this.user.uid;
+   const path = `/users/${userId}`;
+   return this.db.object(path);
+ }
 
- // getUsers() {
- //   const path = '/users';
- //   return this.db.list(path);
- // }
+ getUsers() {
+   const path = '/users';
+   return this.db.list(path);
+ }
 
   sendMessage(msg: string) {
     const timestamp = this.getTimeStamp();
-    //const email = this.user.email;
-    const email = 'this.user.email;'
+    const email = this.user.email;
+    // const email = 'this.user.email;'
     // this.chatMessages = this.getMessages();
     // this.chatMessages.push();
     const messageObject = {
@@ -62,20 +62,18 @@ export class ChatService {
       timeSent: timestamp,
       email: email }
 
-    this.messagesDB.set("message", messageObject)
+      console.log("called sendmessage")
 
-    console.log("called sendmessage")
+      let messages = firebase.database().ref().child("messages").push().key
+
+      let newMessage = firebase.database().ref("messages/" + messages).set(messageObject)
+
   }
 
-  // getMessages(): Observable<ChatMessage[]> {
-  //   // query to create our message feed binding
-  //   return this.db.list('messages', {
-  //     query: {
-  //       limitToLast: 25,
-  //       orderByKey: true
-  //     }
-  //   });
-  // }
+  getMessages() {
+    // query to create our message feed bindings
+    return this.chatMessages
+	}
 
   getTimeStamp() {
     const now = new Date();
