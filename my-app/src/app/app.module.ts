@@ -10,11 +10,11 @@ import { AppComponent } from './app.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
-import { MessageComponent } from './feedback/message.component';
-import { MessageService } from './feedback/message.service';
-import { MessageInputComponent } from './feedback/message-input.component';
-import { MessageListComponent } from './feedback/message-list.component';
-import { MessagesComponent } from './feedback/messages.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbackService } from './feedback/feedback.service';
+import { FeedbackInputComponent } from './feedback/feedback-input.component';
+import { FeedbackListComponent } from './feedback/feedback-list.component';
+import { FeedbacksComponent } from './feedback/feedbacks.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -33,10 +33,10 @@ import { environment } from '../environments/environment';
     ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
-    MessageComponent,
-    MessageInputComponent,
-    MessageListComponent,
-    MessagesComponent,
+    FeedbackComponent,
+    FeedbackInputComponent,
+    FeedbackListComponent,
+    FeedbacksComponent,
     LoginFormComponent,
     SignupFormComponent,
     NavbarComponent,
@@ -51,7 +51,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [AuthService, ChatService, AngularFireDatabase, MessageService],
+  providers: [AuthService, ChatService, AngularFireDatabase, FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
