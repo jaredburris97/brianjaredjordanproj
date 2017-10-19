@@ -60,7 +60,6 @@ export class ChatService {
     const messageObject = {
       message: msg,
       timeSent: timestamp,
-      userName: this.userName,
       email: email }
 
       console.log("called sendmessage");
