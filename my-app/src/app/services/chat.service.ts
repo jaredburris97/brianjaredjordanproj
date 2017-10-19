@@ -60,10 +60,12 @@ export class ChatService {
     const messageObject = {
       message: msg,
       timeSent: timestamp,
+      userName: this.userName,
       email: email }
 
       console.log("called sendmessage")
 
+      //Allows for the addition of messages to the firebase database
       let messages = firebase.database().ref().child("messages").push().key
 
       let newMessage = firebase.database().ref("messages/" + messages).set(messageObject)
