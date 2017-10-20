@@ -31,7 +31,7 @@ export class FeedbackInputComponent implements OnInit {
 		}
 	}
 
-	onClear(form: NgForm) {
+	/*onClear(form: NgForm) {
 		this.feedback = null;
 		form.resetForm();
 	}
@@ -40,5 +40,5 @@ export class FeedbackInputComponent implements OnInit {
 		this.feedbackService.feedbackIsEdit.subscribe(
 			(feedback: Feedback) => this.feedback = feedback
 		);
-	}
+	}*/
 }

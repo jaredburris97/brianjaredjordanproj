@@ -12,9 +12,9 @@ export class FeedbackComponent {
 
   constructor(private feedbackService: FeedbackService) {}
 
-   onEdit(){
+   /*onEdit(){
   	   this.feedbackService.editFeedback(this.feedback);
-    }
+    }*/
 
   onDelete(){
   	this.feedbackService.deleteFeedback(this.feedback);
