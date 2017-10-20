@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
 import { FeedbackService } from "../services/feedback.service";
@@ -9,12 +9,24 @@ import { Feedback } from "./feedback.model";
 	templateUrl: './feedback-input.component.html',
 	styleUrls: ['./feedback-input.component.css']
 })
-export class FeedbackInputComponent{
+export class FeedbackInputComponent implements OnInit {
+	feedback: Feedback;
+
 	constructor(private feedbackService: FeedbackService) {}
 
 	onSubmit(form: NgForm){
 		const feedback = new Feedback(form.value.content, 'Max');
-		this.feedbackService.addFeedback(feedback);
+		this.feedbackService.addFeedback(feedback)
+			.subscribe(
+				data => console.log(data),
+				error => console.error(error)
+			);
 		form.resetForm();
+	}
+
+	ngOnInit(){
+		this.feedbackService.feedbackIsEdit.subscribe(
+			(feedback: Feedback) => this.feedback = feedback
+		);
 	}
 }

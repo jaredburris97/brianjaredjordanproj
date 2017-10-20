@@ -8,13 +8,13 @@ import { FeedbackService } from '../services/feedback.service';
 })
 export class FeedbackComponent {
   @Input() feedback: Feedback;
-  //@Output() editClicked = new EventEmitter<string>();
+  
 
   constructor(private feedbackService: FeedbackService) {}
 
    onEdit(){
-  	this.fee
-  }
+  	   this.feedbackService.editFeedback(this.feedback);
+    }
 
   onDelete(){
   	this.feedbackService.deleteFeedback(this.feedback);

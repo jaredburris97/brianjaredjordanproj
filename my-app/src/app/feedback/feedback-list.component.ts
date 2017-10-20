@@ -9,16 +9,21 @@ import { FeedbackService } from "../services/feedback.service";
 			<div class="col-md-8 col-md-offset-2">
 				<app-feedback 
 					[feedback]="feedback"
-					//(editClicked)="feedback.content = $event"
+					
 					*ngFor="let feedback of feedbacks"></app-feedback>
 			</div>`
 })
 export class FeedbackListComponent implements OnInit{
-	feedbacks: Feedback[] = [];
+	feedbacks: Feedback[];
 
 	constructor(private feedbackService: FeedbackService) {}
 
 	ngOnInit(){
-		this.feedbacks = this.feedbackService.getFeedbacks();
+		this.feedbackService.getFeedbacks()
+			.subscribe(
+				(feedbacks: Feedback[]) => {
+					this.feedbacks = feedbacks;
+				}
+			);
 	}
 }
