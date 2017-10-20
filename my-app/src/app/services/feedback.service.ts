@@ -13,24 +13,24 @@ import { Feedback } from "../feedback/feedback.model";
 
 @Injectable()
 export class FeedbackService {
-	//feedbacks: Feedback[] = [];
+	feedbacks: Feedback[] = [];
 	//feedbackIsEdit = new EventEmitter<Feedback>();
 
-	items: FirebaseListObservable<any>;
-	name: any;
+	//items: FirebaseListObservable<any>;
+	//name: any;
 
 	//constructor(private http: Http) {}
-	constructor(public af: AngularFire) {
-		this.items = af.database.list('/feedbacks');
+	constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
+		/*this.items = af.database.list('/feedbacks');
 
 		this.af.auth.subscribe(auth => {
 			if(auth){
 					this.name = auth;
 				}
-			});
+			});*/
 	}
 
-	addFeedback(msg: stringify) {
+	addFeedback(msg: Feedback) {
 		/*this.items.push({ feedback: feedback});
 		this.items.content = '';*/
 	
@@ -43,7 +43,9 @@ export class FeedbackService {
       	//Allows for the addition of messages to the firebase database
       	let feedbacks = firebase.database().ref().child("feedbacks").push().key
 
-      	let newMessage = firebase.database().ref("messages/" + messages).set(messageObject);
+      	let newFeedback = firebase.database().ref("feedbacks/" + feedbacks).set(feedbackObject);
+		
+
 		/*this.feedbacks.push(feedback);
 		const body = JSON.stringify(feedback);
 		const headers = new Headers({'Content-Type': 'application/json'});

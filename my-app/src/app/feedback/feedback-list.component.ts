@@ -19,11 +19,11 @@ export class FeedbackListComponent implements OnInit{
 	constructor(private feedbackService: FeedbackService) {}
 
 	ngOnInit(){
-		this.feedbackService.getFeedbacks()
+		/*this.feedbackService.getFeedbacks()
 			.subscribe(
 				(feedbacks: Feedback[]) => {
 					this.feedbacks = feedbacks;
 				}
-			);
+			);*/
 	}
 }
