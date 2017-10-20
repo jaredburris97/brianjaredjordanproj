@@ -34,11 +34,11 @@ export class FeedbackInputComponent implements OnInit {
 	/*onClear(form: NgForm) {
 		this.feedback = null;
 		form.resetForm();
-	}
+	}*/
 
 	ngOnInit(){
 		this.feedbackService.feedbackIsEdit.subscribe(
 			(feedback: Feedback) => this.feedback = feedback
 		);
-	}*/
+	}
 }

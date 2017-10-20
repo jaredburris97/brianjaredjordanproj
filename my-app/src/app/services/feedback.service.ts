@@ -2,8 +2,12 @@
 import 'rxjs/Rx';
 import { Observable } from 'rxjs';*/
 
-import { FirebaseListObservable } from 'angularfire2';
-import { Injectable } from "@angular/core";
+import * as firebase from 'firebase/app';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AuthService } from '../services/auth.service';
 
 import { Feedback } from "../feedback/feedback.model";
 
@@ -26,10 +30,20 @@ export class FeedbackService {
 			});
 	}
 
-	addFeedback(feedback: Feedback) {
-		this.items.push({ feedback: feedback});
-		this.items.content = '';
-	}
+	addFeedback(msg: stringify) {
+		/*this.items.push({ feedback: feedback});
+		this.items.content = '';*/
+	
+		const feedbackObject = {
+      		message: msg 
+      	}
+
+      	console.log("called sendfeedback");
+
+      	//Allows for the addition of messages to the firebase database
+      	let feedbacks = firebase.database().ref().child("feedbacks").push().key
+
+      	let newMessage = firebase.database().ref("messages/" + messages).set(messageObject);
 		/*this.feedbacks.push(feedback);
 		const body = JSON.stringify(feedback);
 		const headers = new Headers({'Content-Type': 'application/json'});
