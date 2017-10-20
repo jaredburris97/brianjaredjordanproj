@@ -38,6 +38,10 @@ export class FeedbackService {
 		this.feedbackIsEdit.emit(feedback);
 	}
 
+	updateFeedback(feedback: Feedback){
+		
+	}
+
 	deleteFeedback(feedback: Feedback) {
 		this.feedbacks.splice(this.feedbacks.indexOf(feedback), 1);
 	}
