@@ -49,10 +49,10 @@ app-navbar {
 }
 
 app-chat-form{
-	width: 100%;
-	display: flex;
-	white-space: nowrap;
-	overflow: none;
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+  overflow: none;
 }
 
 .message {
