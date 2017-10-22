@@ -15,7 +15,6 @@ export class FeedbackInputComponent implements OnInit {
 	constructor(private feedbackService: FeedbackService) {}
 
 	onSubmit(form: NgForm){
-		console.log("now");
 		if(this.feedback) {
 			//Edit
 			console.log("i hit send!!");
