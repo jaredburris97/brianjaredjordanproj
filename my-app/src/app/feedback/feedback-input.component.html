@@ -1,16 +1,16 @@
 <div class="col-md-8 col-md-offset-2">
-	<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+	<form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
 		<div class="form-group">
-			<label for="content">Content</label>
+			<label for="feedback">Feedback</label>
 			<input 
 					type="text" 
-					id="content" 
+					id="feedback" 
 					class="form-control"
 					ngModel
 					name="content"
-					required>
+					required />
 		</div>
 		<button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
-		<button class="btn btn-primary" type="submit">Save</button>
+		<button class="btn btn-primary" type="submit">Send</button>
 	</form>
 </div>
