@@ -13,7 +13,7 @@ import { Feedback } from "../feedback/feedback.model";
 
 @Injectable()
 export class FeedbackService {
-	feedbacks: Feedback[] = [];
+	private feedbacks: Feedback[] = [];
 	//feedbackIsEdit = new EventEmitter<Feedback>();
 
 	//items: FirebaseListObservable<any>;
@@ -31,14 +31,12 @@ export class FeedbackService {
 	}
 
 	addFeedback(msg: Feedback) {
-		/*this.items.push({ feedback: feedback});
-		this.items.content = '';*/
+		this.feedbacks.push(msg);
+		//this.items.content = '';*/
 	
 		const feedbackObject = {
       		message: msg 
       	}
-
-      	console.log("called sendfeedback");
 
       	//Allows for the addition of messages to the firebase database
       	let feedbacks = firebase.database().ref().child("feedbacks").push().key
@@ -53,8 +51,9 @@ export class FeedbackService {
 		.catch((error: Response) => Observable.throw(error.json()));*/
 	}
 
-	/*getFeedbacks() {
-		return this.http.get('http://localhost:3000/feedback')
+	getFeedbacks() {
+		return this.feedbacks;
+		/*return this.http.get('http://localhost:3000/feedback')
 			.map((response: Response) => {
 				const feedbacks = response.json().obj;
 				let transformedFeedbacks: Feedback[] = [];
@@ -64,10 +63,10 @@ export class FeedbackService {
 				this.feedbacks = transformedFeedbacks;
 				return transformedFeedbacks;
 			})
-			.catch((error: Response) => Observable.throw(error.json()));;
+			.catch((error: Response) => Observable.throw(error.json()));*/
 	}
 
-	editFeedback(feedback: Feedback) {
+	/*editFeedback(feedback: Feedback) {
 		this.feedbackIsEdit.emit(feedback);
 	}
 

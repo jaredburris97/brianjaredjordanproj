@@ -15,13 +15,13 @@ export class FeedbackInputComponent implements OnInit {
 	constructor(private feedbackService: FeedbackService) {}
 
 	onSubmit(form: NgForm){
-		if(this.feedback) {
+		/*if(this.feedback) {
 			//Edit
 			console.log("i hit send!!");
 			this.feedback.content = form.value.content;
 			this.feedback = null;
 		} else {
-			//Create
+			//Create*/
 		const feedback = new Feedback(form.value.content, 'Max');
 		this.feedbackService.addFeedback(feedback);
 			/*.subscribe(
@@ -29,7 +29,7 @@ export class FeedbackInputComponent implements OnInit {
 				error => console.error(error)
 			);*/
 		form.resetForm();
-		}
+		//}
 	}
 
 	onClear(form: NgForm) {
