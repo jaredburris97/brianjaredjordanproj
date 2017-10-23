@@ -13,26 +13,40 @@ import { FeedComponent } from './feed/feed.component';
 import { MessageComponent } from './message/message.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarActivePageDirective } from './navbar/navbar_active.directive'
+
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { AdminportalComponent } from './adminportal/adminportal.component';
 
 import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
 
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
+import { IframecreatorComponent } from './iframecreator/iframecreator.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SignupFormComponent,
+    LoginFormComponent,
+
+    AdminportalComponent,
+    IframecreatorComponent,
+    AppFooterComponent,
+
     ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
     MessageComponent,
-    LoginFormComponent,
-    SignupFormComponent,
+
     NavbarComponent,
+    NavbarActivePageDirective,
+
     UserListComponent,
     UserItemComponent
   ],

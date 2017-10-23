@@ -1,9 +1,44 @@
+<!-- J A R E D ' S   N A V B A R
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+<div class="navbar navbar-default col-md-12" role="navigation">
+	<div class="container col-md-12">
+    	<div class="navbar-header col-md-12">
+
+    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+    		</button>
+
+      		<a class="navbar-brand" href="/app">Project Presenter - Eleven Fifty Academy</a>
+    	</div>
+	<div class="navbar-collapse collapse">
+	    <ul class="nav navbar-nav col-md-12">
+	        <li class="col-md-3">
+	        	<a href="/signup" [myHighlight]="color" >Signup</a>
+	        </li>
+			<li class="col-md-3">
+				<a href="/login">Login</a>
+			</li>
+			<li class="col-md-3">
+				<a href="/logout">Logout</a>
+			</li>
+			<li class="col-md-3">
+				<a href="/admin">Administrator</a>
+			</li>
+	    </ul>
+	</div>
+  	</div>
+</div>
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
 <div class="navBar">
     <div id="logo"></div>
     <div id="heading"><a routerLink="/"></a></div>
   <div class="links">
     <span>
-      <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
+      <a *ngIf="!(user|async)?.uid" href="/login" (click)="login()">Login</a>
     </span>
     <span>
       <a *ngIf="!(user|async)?.uid" routerLink="/signup">Sign Up</a>
@@ -12,7 +47,7 @@
       <span id="userEmail" *ngIf="(user|async)?.uid">Hello, {{userEmail}}</span>
     </span>
     <span>
-      <a *ngIf="(user|async)?.uid" href="#" (click)="logout()">Logout</a>
+      <a *ngIf="(user|async)?.uid" href="/login" (click)="logout()">Logout</a>
     </span>
   </div>
 </div>
