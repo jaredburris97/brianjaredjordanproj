@@ -39,40 +39,34 @@ div {
 */
 
 app-chatroom {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
-
 app-navbar {
-  background-color: purple;
+  background-color: white;
 	width: 100%;
 }
-
 app-chat-form{
   width: 100%;
   display: flex;
   white-space: nowrap;
   overflow: none;
 }
-
 .message {
-	display: block;
-	height: auto;
+  display: block;
+  height: auto;
 }
 
 /* Sticky footer styles
 -------------------------------------------------------------------
-
 body {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-
 .navbar {
 	position: fixed;
 	top: 0px;
 	width: 100%;
 }
-
 --------------------------------------------------------------------
 */
