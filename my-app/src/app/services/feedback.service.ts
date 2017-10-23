@@ -3,7 +3,7 @@ import 'rxjs/Rx';
 import { Observable } from 'rxjs';*/
 
 import * as firebase from 'firebase/app';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -14,7 +14,7 @@ import { Feedback } from "../feedback/feedback.model";
 @Injectable()
 export class FeedbackService {
 	private feedbacks: Feedback[] = [];
-	//feedbackIsEdit = new EventEmitter<Feedback>();
+	feedbackIsEdit = new EventEmitter<Feedback>();
 
 	//items: FirebaseListObservable<any>;
 	//name: any;
@@ -66,11 +66,11 @@ export class FeedbackService {
 			.catch((error: Response) => Observable.throw(error.json()));*/
 	}
 
-	/*editFeedback(feedback: Feedback) {
+	editFeedback(feedback: Feedback) {
 		this.feedbackIsEdit.emit(feedback);
 	}
 
-	updateFeedback(feedback: Feedback){
+	/*updateFeedback(feedback: Feedback){
 
 	}*/
 

@@ -9,7 +9,7 @@ import { FeedbackService } from "../services/feedback.service";
 			<div class="col-md-8 col-md-offset-2">
 				<app-feedback 
 					[feedback]="feedback"
-					(editClicked)="feedback.content = $event"
+					
 					*ngFor="let feedback of feedbacks"></app-feedback>
 			</div>`
 })
