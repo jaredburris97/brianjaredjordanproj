@@ -3,7 +3,7 @@ import 'rxjs/Rx';
 import { Observable } from 'rxjs';*/
 
 import * as firebase from 'firebase/app';
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -14,10 +14,12 @@ import { Feedback } from "../feedback/feedback.model";
 @Injectable()
 export class FeedbackService {
 	private feedbacks: Feedback[] = [];
-	feedbackIsEdit = new EventEmitter<Feedback>();
 
-	//items: FirebaseListObservable<any>;
-	//name: any;
+	
+	feedbackMessages: Observable<Feedback[]>;
+	feedbackDB: any;
+
+	/*feedbackIsEdit = new EventEmitter<Feedback>();*/
 
 	//constructor(private http: Http) {}
 	constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
@@ -28,18 +30,20 @@ export class FeedbackService {
 					this.name = auth;
 				}
 			});*/
+	this.feedbackDB = this.db.list("feedbacks");
+  	this.feedbackMessages = this.feedbackDB.valueChanges();
 	}
 
-	addFeedback(msg: Feedback) {
-		this.feedbacks.push(msg);
+	addFeedback(fdbk: Feedback) {
+		this.feedbacks.push(fdbk);
 		//this.items.content = '';*/
 	
 		const feedbackObject = {
-      		message: msg 
+      		feedback: fdbk
       	}
 
       	//Allows for the addition of messages to the firebase database
-      	let feedbacks = firebase.database().ref().child("feedbacks").push().key
+      	let feedbacks = firebase.database().ref().child("feedbacks").push().key;
 
       	let newFeedback = firebase.database().ref("feedbacks/" + feedbacks).set(feedbackObject);
 		
@@ -66,11 +70,11 @@ export class FeedbackService {
 			.catch((error: Response) => Observable.throw(error.json()));*/
 	}
 
-	editFeedback(feedback: Feedback) {
+	/*editFeedback(feedback: Feedback) {
 		this.feedbackIsEdit.emit(feedback);
 	}
 
-	/*updateFeedback(feedback: Feedback){
+	updateFeedback(feedback: Feedback){
 
 	}*/
 

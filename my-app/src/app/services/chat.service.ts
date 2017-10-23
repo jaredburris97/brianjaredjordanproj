@@ -13,7 +13,7 @@ export class ChatService {
   chatMessages: Observable<ChatMessage[]>;
   messagesDB: any;
   chatMessage: ChatMessage;
-  userName: Observable<string>;
+  //userName: Observable<string>;
 
   constructor( private db: AngularFireDatabase, private afAuth: AngularFireAuth){
   	this.afAuth.authState.subscribe(auth => {

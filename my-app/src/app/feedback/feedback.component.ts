@@ -23,14 +23,13 @@ import { FeedbackService } from '../services/feedback.service';
   `]
 })
 export class FeedbackComponent {
-  @Input() feedback: Feedback;
-  
+  @Input() feedback: Feedback;  
 
   constructor(private feedbackService: FeedbackService) {}
 
-   onEdit(){
+   /*onEdit(){
   	   this.feedbackService.editFeedback(this.feedback);
-    }
+    }*/
 
   onDelete(){
   	this.feedbackService.deleteFeedback(this.feedback);
