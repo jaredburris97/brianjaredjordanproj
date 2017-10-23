@@ -22,6 +22,6 @@ iframe.width="100%";
 iframe.height="50%";
 iframe.id="randomid";
 iframe.setAttribute("src", link);
-document.getElementById("ad54").appendChild(iframe);
+document.getElementById("daFrame").appendChild(iframe);
 
 }

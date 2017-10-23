@@ -1,12 +1,14 @@
 <div class="container">
   <div class="loginCard">
     <h2 class="heading">Log In</h2>
-      <input 
+      <input
+        placeholder="email" 
         [(ngModel)]="email"
         type="email" 
         name="email" 
         class="formInput" />
       <input type="password" 
+        placeholder="password"
         [(ngModel)]="password"
         name="password" 
         class="formInput" />
@@ -15,10 +17,8 @@
               (click)="login()">
               Log In
       </button>
-      <button class="btn" 
-              id="btn-signUp" 
-              (click)="signup()">
-              Sign Up
-      </button>
+      <br/>
+      <br/>
+      <a id="btn-signUp" href="http://localhost:4200/signup" class="btn">Sign Up</a>
   </div>
 </div>
