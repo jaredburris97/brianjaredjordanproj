@@ -36,7 +36,6 @@ export class FeedbackService {
 
 	addFeedback(fdbk: Feedback) {
 		this.feedbacks.push(fdbk);
-		//this.items.content = '';*/
 	
 		const feedbackObject = {
       		feedback: fdbk
