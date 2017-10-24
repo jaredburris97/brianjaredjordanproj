@@ -1,19 +1,9 @@
-<app-navbar>Loading app navbar . . .</app-navbar>
-
-<router-outlet>Loading router outlet . . .</router-outlet>
-
-<!-- <p>hello from app component html</p> -->
-
-<!-- <app-adminportal></app-adminportal>
-		
-<app-iframecreator>Loading iframe . . .</app-iframecreator> -->
-
-<app-footer>
-<!-- 	<div class="chatRoom">
-		<div class="chatHeaderWrapper">
-			<app-chatroom></app-chatroom>
-			<app-feed></app-feed>
-			<app-message></app-message>
-		</div>
-	</div> -->
-</app-footer>
+<div class="chatRoom">
+  <div class="chatHeaderWrapper">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="footer">
+  	<app-footer></app-footer>
+  </div>
+  <router-outlet></router-outlet>
+</div>
