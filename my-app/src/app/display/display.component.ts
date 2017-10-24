@@ -25,3 +25,15 @@ iframe.setAttribute("src", link);
 document.getElementById("daFrame").appendChild(iframe);
 
 }
+
+window.onload = function(){
+var chatlink = "http://localhost:4200/chat"
+var chatiframe = document.createElement('iframe');
+chatiframe.frameBorder="0px";
+chatiframe.width="650px";
+chatiframe.height="100px";
+chatiframe.id="randomid";
+chatiframe.setAttribute("src", chatlink);
+document.getElementById("chatFrame").appendChild(chatiframe);
+
+}

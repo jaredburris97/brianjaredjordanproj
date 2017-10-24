@@ -23,6 +23,7 @@ import { AuthService } from './services/auth.service';
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
 import { DisplayComponent } from './display/display.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DisplayComponent } from './display/display.component';
     NavbarComponent,
     UserListComponent,
     UserItemComponent,
-    DisplayComponent
+    DisplayComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
