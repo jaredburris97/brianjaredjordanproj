@@ -16,73 +16,22 @@ body {
 }
 
 app-chatroom {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-app-navbar {
-	width: 100%;
+app-navbar{
+    width: 100%;
 }
 
 app-chat-form{
-	width: 100%;
-	display: flex;
-	white-space: nowrap;
-	overflow: none;
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    overflow: none;
 }
 
 .message {
-	display: block;
-	height: auto;
+  display: block;
+  height: auto;
 }
-
-/*body {
-	background-color: black;
-}*/
-
-/* Sticky footer styles
--------------------------------------------------- */
-/*html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.navbar {
-	position: fixed;
-	top: 0px;
-	width: 100%;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;*/
-  /* Set the fixed height of the footer here */
-/*  height: 60px;*/
-/*  line-height: 60px;*/ /* Vertically center the text there */
-/*  background-color: #f5f5f5;
-}
-*/
-
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-/*body > .container {
-	padding: 60px 15px 0;
-}
-
-.footer > .container {
-	position: absolute;
-	padding-right: 15px;
-	padding-left: 15px;
-}
-
-code {
-	font-size: 80%;
-}*/
