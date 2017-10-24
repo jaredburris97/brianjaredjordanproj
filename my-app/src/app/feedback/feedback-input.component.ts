@@ -22,7 +22,7 @@ export class FeedbackInputComponent implements OnInit {
 			this.feedback = null;
 		} else {
 			//Create*/
-		const feedback = new Feedback(form.value.content, 'Max');
+		const feedback = new Feedback(form.value.content, 'bri');
 		this.feedbackService.addFeedback(feedback);
 			/*.subscribe(
 				data => console.log(data),
