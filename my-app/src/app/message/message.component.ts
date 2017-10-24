@@ -10,7 +10,8 @@ import { ChatMessage } from '../models/chat-message.model';
 })
 export class MessageComponent implements OnInit {
 
-	@Input() chatMessage: ChatMessage;
+	@Input()
+  chatMessage: ChatMessage;
 	userEmail: string;
 	userName: string;
 	messageContent: string;
