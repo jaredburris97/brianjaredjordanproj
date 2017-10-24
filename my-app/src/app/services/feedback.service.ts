@@ -22,16 +22,9 @@ export class FeedbackService {
 	/*feedbackIsEdit = new EventEmitter<Feedback>();*/
 
 	//constructor(private http: Http) {}
-	constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
-		/*this.items = af.database.list('/feedbacks');
-
-		this.af.auth.subscribe(auth => {
-			if(auth){
-					this.name = auth;
-				}
-			});*/
-	this.feedbackDB = this.db.list("feedbacks");
-  	this.feedbackMessages = this.feedbackDB.valueChanges();
+	constructor(private db: AngularFireDatabase) {
+		this.feedbackDB = this.db.list("feedbacks");
+  		this.feedbackMessages = this.feedbackDB.valueChanges();
 	}
 
 	addFeedback(fdbk: Feedback) {

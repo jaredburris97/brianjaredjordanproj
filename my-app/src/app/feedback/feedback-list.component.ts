@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnChanges } from "@angular/core";
 
 import { Feedback } from "./feedback.model";
 import { FeedbackService } from "../services/feedback.service";
@@ -13,7 +13,7 @@ import { FeedbackService } from "../services/feedback.service";
 					*ngFor="let feedback of feedbacks"></app-feedback>
 			</div>`
 })
-export class FeedbackListComponent implements OnInit{
+export class FeedbackListComponent implements OnInit {
 	feedbacks: Feedback[];
 
 	constructor(private feedbackService: FeedbackService) {}
