@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from "@angular/core";
 
 import { Feedback } from "./feedback.model";
 import { FeedbackService } from "../services/feedback.service";
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
 	selector: 'app-feedback-list',
@@ -14,7 +15,7 @@ import { FeedbackService } from "../services/feedback.service";
 			</div>`
 })
 export class FeedbackListComponent implements OnInit {
-	feedbacks: Feedback[];
+	feedbacks: FirebaseListObservable<Feedback[]>;
 
 	constructor(private feedbackService: FeedbackService) {}
 

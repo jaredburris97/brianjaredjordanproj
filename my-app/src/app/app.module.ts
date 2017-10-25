@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbackService } from './services/feedback.service';
+import { FeedbackInputComponent } from './feedback/feedback-input.component';
+import { FeedbackListComponent } from './feedback/feedback-list.component';
+import { FeedbacksComponent } from './feedback/feedbacks.component';
 import { MessageComponent } from './message/message.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -37,6 +42,10 @@ import { FooterComponent } from './footer/footer.component';
    ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
+    FeedbackComponent,
+    FeedbackInputComponent,
+    FeedbackListComponent,
+    FeedbacksComponent,
     MessageComponent,
     NavbarComponent,
     UserListComponent,

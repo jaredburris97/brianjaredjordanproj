@@ -1,12 +1,11 @@
 /*import { Http, Response, Headers } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from 'rxjs';*/
-
 import * as firebase from 'firebase/app';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AuthService } from '../services/auth.service';
 
 import { Feedback } from "../feedback/feedback.model";
@@ -16,7 +15,7 @@ export class FeedbackService {
 	private feedbacks: Feedback[] = [];
 
 	
-	feedbackMessages: Observable<Feedback[]>;
+	feedbackMessages: FirebaseListObservable<Feedback[]>;
 	feedbackDB: any;
 
 	/*feedbackIsEdit = new EventEmitter<Feedback>();*/
@@ -24,20 +23,25 @@ export class FeedbackService {
 	//constructor(private http: Http) {}
 	constructor(private db: AngularFireDatabase) {
 		this.feedbackDB = this.db.list("feedbacks");
-  		this.feedbackMessages = this.feedbackDB.valueChanges();
+		console.log("constructor");
 	}
 
 	addFeedback(fdbk: Feedback) {
-		this.feedbacks.push(fdbk);
+		/*this.feedbacks.push(fdbk);
 	
 		const feedbackObject = {
       		feedback: fdbk
-      	}
+      	}*/
+
+      	this.feedbackMessages = this.getFeedbacks();
+    		this.feedbackMessages.push({
+      			feedback: fdbk
+      	});
 
       	//Allows for the addition of messages to the firebase database
-      	let feedbacks = firebase.database().ref().child("feedbacks").push().key;
+      	/*let feedbacks = firebase.database().ref().child("feedbacks").push().key;
 
-      	let newFeedback = firebase.database().ref("feedbacks/" + feedbacks).set(feedbackObject);
+      	let newFeedback = firebase.database().ref("feedbacks/" + feedbacks).set(feedbackObject);*/
 		
 
 		/*this.feedbacks.push(feedback);
@@ -47,7 +51,13 @@ export class FeedbackService {
 		.catch((error: Response) => Observable.throw(error.json()));*/
 	}
 
-	getFeedbacks() {
+	getFeedbacks(): FirebaseListObservable<Feedback[]> {
+    // query to create our message feed binding
+    	return this.db.list('feedbacks');
+    }
+  
+
+	/*getFeedbacks() {
 		return this.feedbacks;
 		/*return this.http.get('http://localhost:3000/feedback')
 			.map((response: Response) => {
@@ -59,15 +69,7 @@ export class FeedbackService {
 				this.feedbacks = transformedFeedbacks;
 				return transformedFeedbacks;
 			})
-			.catch((error: Response) => Observable.throw(error.json()));*/
-	}
-
-	/*editFeedback(feedback: Feedback) {
-		this.feedbackIsEdit.emit(feedback);
-	}
-
-	updateFeedback(feedback: Feedback){
-
+			.catch((error: Response) => Observable.throw(error.json()));
 	}*/
 
 	deleteFeedback(feedback: Feedback) {
