@@ -3,14 +3,14 @@
 		<div class="col-md-8 col-md-offset-2">
 			<article class="panel panel-default">
 				<div class="panel-body">
-					{{feedback.content}}<span style="background-color: red">hi</span>
+					{{feedback.feedback}}
 				</div>
 				<footer class="panel-footer">
 					<div class="author">
 						{{feedback.username}}
 					</div>
 					<div class="config">
-						<a (click)="onEdit()">Edit</a>
+						<!--<a (click)="onEdit()">Edit</a>-->
 						<a (click)="onDelete()">Delete</a>
 					</div>
 				</footer>

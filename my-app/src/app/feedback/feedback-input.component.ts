@@ -14,13 +14,13 @@ export class FeedbackInputComponent implements OnInit {
 
 	constructor(private feedbackService: FeedbackService) {}
 
-	send() {
+	onSubmit() {
     	this.feedbackService.addFeedback(this.feedback);
     	this.feedback = '';
   	}
 
-  	get() {
-    	this.feedbackService.getFeedback();
+  	clear() {
+  		this.feedback = '';
   	}
 
 	ngOnInit(){

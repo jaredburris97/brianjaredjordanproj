@@ -1,3 +1,12 @@
 input {
-	width: 400px;
+	height: 40px;
+	width: 500px;
+	box-sizing: border-box;
+  	border: 2px ridge #dadada;
+  	border-radius: 3px;
+}
+
+input:focus {
+  box-shadow: 1px 1px 10px 0.5px gray;
+  outline: none;
 }

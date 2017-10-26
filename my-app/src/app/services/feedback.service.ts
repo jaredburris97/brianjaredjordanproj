@@ -32,10 +32,6 @@ export class FeedbackService {
       		}
     	});
     }
-  
-    getFeedback(){
-    	this.db.list('feedback').subscribe(console.log);
-    }
 
 	/*deleteFeedback(feedback: Feedback) {
 		this.feedbacks.splice(this.feedbacks.indexOf(feedback), 1);
