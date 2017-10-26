@@ -10,32 +10,18 @@ import { Feedback } from "./feedback.model";
 	styleUrls: ['./feedback-input.component.css']
 })
 export class FeedbackInputComponent implements OnInit {
-	feedback: Feedback;
+	feedback: string;
 
 	constructor(private feedbackService: FeedbackService) {}
 
-	onSubmit(form: NgForm){
-		/*if(this.feedback) {
-			//Edit
-			console.log("i hit send!!");
-			this.feedback.content = form.value.content;
-			this.feedback = null;
-		} else {
-			//Create*/
-		const feedback = new Feedback(form.value.content, 'bri');
-		this.feedbackService.addFeedback(feedback);
-			/*.subscribe(
-				data => console.log(data),
-				error => console.error(error)
-			);*/
-		form.resetForm();
-		//}
-	}
+	send() {
+    	this.feedbackService.addFeedback(this.feedback);
+    	this.feedback = '';
+  	}
 
-	onClear(form: NgForm) {
-		this.feedback = null;
-		form.resetForm();
-	}
+  	get() {
+    	this.feedbackService.getFeedback();
+  	}
 
 	ngOnInit(){
 		//this.feedbackService.feedbackIsEdit.subscribe(

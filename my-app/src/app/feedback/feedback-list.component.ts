@@ -10,8 +10,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 			<div class="col-md-8 col-md-offset-2">
 				<app-feedback 
 					[feedback]="feedback"
-					
-					*ngFor="let feedback of feedbacks"></app-feedback>
+					*ngFor="let feedback of feedbacks | async"></app-feedback>
 			</div>`
 })
 export class FeedbackListComponent implements OnInit {

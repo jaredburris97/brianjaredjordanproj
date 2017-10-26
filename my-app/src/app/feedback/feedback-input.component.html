@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2">
+<!--<div class="col-md-8 col-md-offset-2">
 	<form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
 		<div class="form-group">
 			<label for="feedback">Feedback</label>
@@ -12,5 +12,15 @@
 		</div>
 		<button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
 		<button class="btn btn-primary" type="submit">Send</button>
+		<button class="btn btn-primary" (click)="onRetrieve(f)">Retrieve</button>
 	</form>
-</div>
+</div>-->
+
+
+
+
+
+<input [(ngModel)]="feedback" />
+
+<button class="btn btn-primary" (click)=send()>Send</button>
+<button class="btn btn-primary" (click)=get()>Retrieve</button>

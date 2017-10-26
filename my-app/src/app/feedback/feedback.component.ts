@@ -26,12 +26,4 @@ export class FeedbackComponent {
   @Input() feedback: Feedback;  
 
   constructor(private feedbackService: FeedbackService) {}
-
-   /*onEdit(){
-  	   this.feedbackService.editFeedback(this.feedback);
-    }*/
-
-  onDelete(){
-  	this.feedbackService.deleteFeedback(this.feedback);
-  }
 }
