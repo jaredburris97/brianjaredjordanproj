@@ -3,10 +3,12 @@
     <h2 class="heading">Log In</h2>
       <input 
         [(ngModel)]="email"
+        placeholder="Email" 
         type="email" 
         name="email" 
         class="formInput" />
-      <input type="password" 
+      <input type="password"
+        placeholder="Password" 
         [(ngModel)]="password"
         name="password" 
         class="formInput" />
@@ -15,10 +17,8 @@
               (click)="login()">
               Log In
       </button>
-      <button class="btn" 
-              id="btn-signUp" 
-              (click)="signup()">
-              Sign Up
-      </button>
+      <br/>
+      <br/>
+      <a href="/signup" class="btn" style="background-color: black;">Signup</a>
   </div>
 </div>

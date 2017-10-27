@@ -17,11 +17,18 @@ export class SignupFormComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   signUp() {
-    const email = this.email;
-    const password = this.password;
-    const displayName = this.displayName;
-    this.authService.signUp(email, password, displayName)
-      .then(resolve => this.router.navigate(['chat']))
-      .catch(error => this.errorMsg = error.message);
+    try {
+      throw new Error('Whoops!');
+    } catch (e) {
+      console.log(e.name + ': ' + e.message);
+    }
+
+      const email = this.email;
+      const password = this.password;
+      const displayName = this.displayName;
+      this.authService.signUp(email, password, displayName)
+        .then(resolve => this.router.navigate(['chat']))
+        .catch(error => this.errorMsg = error.message);
+
   }
 }

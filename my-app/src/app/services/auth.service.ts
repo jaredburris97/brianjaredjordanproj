@@ -30,11 +30,12 @@ export class AuthService {
         .then((user) => {
           this.authState = user;
           this.setUserStatus('online');
-          this.router.navigate(['chat']);
+          this.router.navigate(['display']);
         });
     }
 
     logout() {
+      this.setUserStatus('offline'); //jared added this line and IT WORKS
       this.afAuth.auth.signOut();
       this.router.navigate(['login']);
     }
@@ -43,7 +44,7 @@ export class AuthService {
       return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
               .then((user) => {
                 this.authState = user;
-                const status = 'online';
+                let status = 'online'; //jared changed CONST to LET
                 this.setUserData(email, displayName, status);
               }).catch(error => console.log(error));
     }
