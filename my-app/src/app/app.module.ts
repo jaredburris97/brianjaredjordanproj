@@ -10,18 +10,12 @@ import { AppComponent } from './app.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { FeedbackService } from './services/feedback.service';
-import { FeedbackInputComponent } from './feedback/feedback-input.component';
-import { FeedbackListComponent } from './feedback/feedback-list.component';
-import { FeedbacksComponent } from './feedback/feedbacks.component';
 import { MessageComponent } from './message/message.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
-import { AdminportalComponent } from './adminportal/adminportal.component';
 
 import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
@@ -29,29 +23,20 @@ import { AuthService } from './services/auth.service';
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
 import { DisplayComponent } from './display/display.component';
-import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupFormComponent,
-    LoginFormComponent,
-
-   AdminportalComponent,
-
-   ChatFormComponent,
+    ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
-    FeedbackComponent,
-    FeedbackInputComponent,
-    FeedbackListComponent,
-    FeedbacksComponent,
     MessageComponent,
+    LoginFormComponent,
+    SignupFormComponent,
     NavbarComponent,
     UserListComponent,
     UserItemComponent,
-    DisplayComponent,
-    FooterComponent
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
