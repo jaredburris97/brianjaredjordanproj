@@ -1,0 +1,33 @@
+<!--<div class="col-md-8 col-md-offset-2">
+	<form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+		<div class="form-group">
+			<label for="feedback">Feedback</label>
+			<input 
+					type="text" 
+					id="feedback" 
+					class="form-control"
+					ngModel
+					name="content"
+					required />
+		</div>
+		<button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
+		<button class="btn btn-primary" type="submit">Send</button>
+		<button class="btn btn-primary" (click)="onRetrieve(f)">Retrieve</button>
+	</form>
+</div>-->
+
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="col-md-8 col-md-offset-4">
+<!-- 	<div class="top"> -->
+		Feedback
+<!-- 	</div> -->
+	<form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+		<input [(ngModel)]="feedback" name="feedback" placeholder="Enter Feedback" required />
+		<!--<input type="text" ([ngModel)]="feedback?content" id="content" name="content" required />-->
+
+		<button class="btn btn-primary" type="submit">Send</button>
+		<button class="btn btn-danger" (click)=clear()>Clear</button>
+	</form>
+</div>
