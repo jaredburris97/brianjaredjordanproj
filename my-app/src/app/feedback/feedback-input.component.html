@@ -24,7 +24,7 @@
 		Feedback
 	</div>
 	<form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
-		<input [(ngModel)]="feedback" name="feedback" required />
+		<input [(ngModel)]="feedback" name="feedback" placeholder="Enter Feedback" required />
 		<!--<input type="text" ([ngModel)]="feedback?content" id="content" name="content" required />-->
 
 		<button class="btn btn-primary" type="submit">Send</button>
