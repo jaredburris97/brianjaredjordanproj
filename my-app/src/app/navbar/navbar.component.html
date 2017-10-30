@@ -1,18 +1,35 @@
 <div class="navBar">
     <div id="logo"><a href="/"></a><img src="../assets/efalogo.png" alt="efa_logo"></div>
-    <div id="heading"><a routerLink="/"></a></div>
-  <div class="links">
+
+    
+
+    <div id="heading"><a routerLink="/"></a>Me Presenti - A Simple Project Presenter</div>
+
+    
+
+  <div class="links" style="padding-bottom: 1%;">
     <span>
-      <a *ngIf="!(user|async)?.uid" href="/login" (click)="login()">Login</a>
+    <a href="/display"><img src="../assets/display.png" alt="display_icon" width="auto" height="auto"></a>
     </span>
+
     <span>
-      <a *ngIf="!(user|async)?.uid" routerLink="/signup">Sign Up</a>
+    <a href="/chat"><img src="../assets/chat.png" alt="chat_icon" width="auto" height="auto"></a>
     </span>
+
+    <span>
+      <a *ngIf="!(user|async)?.uid" href="/login" (click)="login()">|Login|</a>
+    </span>
+
+    <span>
+      <a *ngIf="!(user|async)?.uid" routerLink="/signup">|Sign Up|</a>
+    </span>
+
     <span>
       <span id="userEmail" *ngIf="(user|async)?.uid">Hello, {{userEmail}}</span>
     </span>
+
     <span>
-      <a *ngIf="(user|async)?.uid" href="/login" (click)="logout()">Logout</a>
+      <a *ngIf="(user|async)?.uid" href="/login" (click)="logout()">|Logout|</a>
     </span>
   </div>
 </div>
