@@ -35,9 +35,9 @@ export class AuthService {
     }
 
     logout() {
-      this.setUserStatus('offline'); //jared added this line and IT WORKS
       this.afAuth.auth.signOut();
       this.router.navigate(['login']);
+      this.setUserStatus('offline'); //jared added this line and IT WORKS
     }
 
     signUp(email: string, password: string, displayName: string) {
