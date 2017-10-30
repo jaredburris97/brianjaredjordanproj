@@ -21,7 +21,8 @@
 
 <div class="col-md-8 col-md-offset-4">
 	<form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
-		<input [(ngModel)]="feedback" name="content" required />
+		<input [(ngModel)]="feedback" name="feedback" required />
+		<!--<input type="text" ([ngModel)]="feedback?content" id="content" name="content" required />-->
 
 		<button class="btn btn-primary" type="submit">Send</button>
 		<button class="btn btn-danger" (click)=clear()>Clear</button>

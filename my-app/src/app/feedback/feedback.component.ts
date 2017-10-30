@@ -20,10 +20,18 @@ import { FeedbackService } from '../services/feedback.service';
             width: 19%;
 
         }
-  `]
+
+        .pointer {
+            cursor: pointer;
+        }
+      `]
 })
 export class FeedbackComponent {
   @Input() feedback: Feedback;  
 
   constructor(private feedbackService: FeedbackService) {}
+
+  onDelete() {
+    this.feedbackService.deleteFeedback(this.feedback);
+  }
 }

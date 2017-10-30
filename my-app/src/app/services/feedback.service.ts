@@ -33,7 +33,8 @@ export class FeedbackService {
     	});
     }
 
-	/*deleteFeedback(feedback: Feedback) {
-		this.feedbacks.splice(this.feedbacks.indexOf(feedback), 1);
-	}*/
+	deleteFeedback(feedback: Feedback) {
+    console.log(feedback.feedbackId);
+		this.feedbackMessages.remove(feedback.feedbackId);
+	}
 }
