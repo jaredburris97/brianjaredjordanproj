@@ -33,8 +33,8 @@ export class FeedbackService {
     	});
     }
 
-	deleteFeedback(feedback: Feedback) {
+	/*deleteFeedback(feedback: Feedback) {
     console.log(feedback.feedbackId);
 		this.feedbackMessages.remove(feedback.feedbackId);
-	}
+	}*/
 }

@@ -20,6 +20,9 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
 <div class="col-md-8 col-md-offset-4">
+	<div class="top">
+		Feedback
+	</div>
 	<form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
 		<input [(ngModel)]="feedback" name="feedback" required />
 		<!--<input type="text" ([ngModel)]="feedback?content" id="content" name="content" required />-->
