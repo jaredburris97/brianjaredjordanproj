@@ -9,6 +9,7 @@ import { ChatMessage } from '../models/chat-message.model';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
+
   @Input() chatMessage: ChatMessage;
   userEmail: string;
   userName: string;

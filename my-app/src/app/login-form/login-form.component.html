@@ -1,24 +1,24 @@
 <div class="container">
   <div class="loginCard">
     <h2 class="heading">Log In</h2>
-      <input
-        placeholder="email" 
+      <input 
         [(ngModel)]="email"
+        placeholder="Email" 
         type="email" 
         name="email" 
         class="formInput" />
-      <input type="password" 
-        placeholder="password"
+      <input type="password"
+        placeholder="Password" 
         [(ngModel)]="password"
         name="password" 
         class="formInput" />
       <button class="btn" 
-              id="btn-login"
+              id="btn-login" 
               (click)="login()">
               Log In
       </button>
       <br/>
       <br/>
-      <a id="btn-signUp" href="http://localhost:4200/signup" class="btn">Sign Up</a>
+      <a href="/signup" class="btn" style="background-color: black;">Signup</a>
   </div>
 </div>
