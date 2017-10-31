@@ -31,7 +31,7 @@ export class FeedbackComponent {
 
   constructor(private feedbackService: FeedbackService) {}
 
-  /*onDelete() {
+  onDelete() {
     this.feedbackService.deleteFeedback(this.feedback);
-  }*/
+  }
 }

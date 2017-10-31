@@ -1,7 +1,7 @@
 export class Feedback { 
 	content: string;
 	username: string;
-	key$: string;
+	$key: string;
 	//userId?: string;
 
 	/*constructor(content: string, username: string, feedbackId: string) {
