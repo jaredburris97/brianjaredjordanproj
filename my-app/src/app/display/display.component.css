@@ -1,3 +1,12 @@
+/*#theBtn:active {
+	animation: hideInputandBtn 1s ease-in-out 0s 1 alternate;
+}
+
+@keyframes hideInputandBtn {
+	from {top: 0px;}
+	to {top: -100px;}
+}*/
+
 input {
 	padding: 5px;
 	height: 50px;
@@ -8,7 +17,7 @@ button {
 	width: 50px;
 	font-family: Arial;
 	background-color: #eee;
-	border: none;
+	border: 1px solid black;
 	padding: 5px 10px;
 	border-radius: 4px;
 	cursor: pointer;

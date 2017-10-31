@@ -26,6 +26,8 @@ import { FeedbacksComponent } from './feedback/feedbacks.component';
 import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
 
+import { AuthGuard } from './guards/auth.guard';
+
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
 import { DisplayComponent } from './display/display.component';
@@ -59,7 +61,11 @@ import { DisplayComponent } from './display/display.component';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [AuthService, ChatService],
+  providers: [
+  AuthService,
+  ChatService,
+  AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
