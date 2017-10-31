@@ -16,6 +16,11 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbackService } from './services/feedback.service';
+import { FeedbackInputComponent } from './feedback/feedback-input.component';
+import { FeedbackListComponent } from './feedback/feedback-list.component';
+import { FeedbacksComponent } from './feedback/feedbacks.component';
 
 import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
@@ -30,6 +35,10 @@ import { DisplayComponent } from './display/display.component';
     ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
+    FeedbackComponent,
+    FeedbackInputComponent,
+    FeedbackListComponent,
+    FeedbacksComponent,
     MessageComponent,
     LoginFormComponent,
     SignupFormComponent,
