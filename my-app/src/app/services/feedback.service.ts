@@ -8,29 +8,29 @@ import { Feedback } from "../feedback/feedback.model";
 
 @Injectable()
 export class FeedbackService {
-    
-    feedbackMessages: FirebaseListObservable<Feedback[]>;
+  
+  feedbackMessages: FirebaseListObservable<Feedback[]>;
 
-    constructor(private db: AngularFireDatabase){}
+  constructor(private db: AngularFireDatabase){}
 
-    addFeedback(fdbk: string) {
-         this.feedbackMessages = this.getFeedbacks();
-           this.feedbackMessages.push({
-                 feedback: fdbk
-         });
+  addFeedback(fdbk: string) {
+        this.feedbackMessages = this.getFeedbacks();
+        this.feedbackMessages.push({
+            feedback: fdbk
+        });
+  }
+
+  getFeedbacks(): FirebaseListObservable<Feedback[]> {
+    // query to create our message feed binding
+      return this.db.list('feedback', {
+         query: {
+            limitToLast: 15,
+            orderByKey: true
+          }
+      });
     }
 
-    getFeedbacks(): FirebaseListObservable<Feedback[]> {
-   // query to create our message feed binding
-       return this.db.list('feedback', {
-            query: {
-               limitToLast: 15,
-               orderByKey: true
-             }
-       });
-   }
-
-    deleteFeedback(feedback: Feedback) {
-        this.feedbackMessages.remove(feedback.$key);
-    }
+  deleteFeedback(feedback: Feedback) {
+    this.feedbackMessages.remove(feedback.$key);
+  }
 }
