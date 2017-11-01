@@ -11,7 +11,12 @@ import { FeedbackService } from "../services/feedback.service";
 			<div class="row">
 					<app-feedback-list></app-feedback-list>
 			</div>
-	`, 
+			`,
+	styles: [`
+			* {
+            height: auto;
+          	}
+          	`],
 	providers: [FeedbackService]
 })
 export class FeedbacksComponent{
